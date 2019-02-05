@@ -56,6 +56,11 @@ class AuthController extends Controller
 
         return response()->json([
             'message' => 'Login satisfactorio', 'user' => $user]);
+    }
 
+    public function list() {
+        $clientes = User::all();
+        return response()->json([
+            'users' => $clientes]);
     }
 }
